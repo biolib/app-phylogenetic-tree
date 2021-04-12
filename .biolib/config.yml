@@ -11,15 +11,13 @@ modules:
         source_files:
             - COPY / /home/biolib/
     muscle:
-        image: biolib://biolib/emscripten:*
-        command: bio-utils/muscle:0.0.59
-        working_directory: /home/biolib/
+        image: biolib://bio-utils/MUSCLE:0.0.59
         input_files:
-            - COPY / /home/biolib/
+            - COPY /home/biolib/inputfile /
         output_files:
-            - COPY /home/biolib/ /
-        source_files:
             - COPY / /home/biolib/
+        source_files:
+            - []
 output_type: markdown
 description_file: README.md
 license_file: LICENSE
