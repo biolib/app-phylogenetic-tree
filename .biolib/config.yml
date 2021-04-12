@@ -1,0 +1,34 @@
+biolib_version: 2
+description_file: README.md
+modules:
+    main:
+        image: biolib://biolib/python3:*
+        command: /home/biolib/src/root.py
+        working_directory: /home/biolib/
+        input_files:
+            - COPY / /home/biolib/
+        output_files:
+            - COPY /home/biolib/ /
+        source_files:
+            - COPY / /home/biolib/
+    muscle:
+        image: biolib://biolib/bl-emscripten:*
+output_type: markdown
+arguments:
+    -
+        default_value: example.fsa
+        description: Input file
+        key: '--file'
+        key_value_separator: ' '
+        required: true
+        type: file
+    -
+        default_value: nj
+        description: Select algorithm to build the phylogenetic tree
+        key: '--tree_type'
+        key_value_separator: ' '
+        required: false
+        type: dropdown
+        options:
+            Neighbor-Joining (NJ): nj
+            Unweighted Pair-Group Method with Arithmetic Averaging (UPGMA): upgma
