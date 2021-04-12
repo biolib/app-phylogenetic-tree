@@ -12,7 +12,7 @@ modules:
         source_files:
             - COPY / /home/biolib/
     muscle:
-        image: biolib://biolib/emscripten:latest
+        image: biolib://biolib/emscripten:0.0.59
         working_directory: /home/biolib/
         input_files:
             - COPY / /home/biolib/
