@@ -1,5 +1,4 @@
 biolib_version: 2
-description_file: README.md
 modules:
     main:
         image: biolib://biolib/python3:*
@@ -12,7 +11,8 @@ modules:
         source_files:
             - COPY / /home/biolib/
     muscle:
-        image: biolib://biolib/emscripten:0.0.59
+        image: biolib://biolib/emscripten:*
+        command: bio-utils/muscle:0.0.59
         working_directory: /home/biolib/
         input_files:
             - COPY / /home/biolib/
@@ -21,6 +21,8 @@ modules:
         source_files:
             - COPY / /home/biolib/
 output_type: markdown
+description_file: README.md
+license_file: LICENSE
 arguments:
     -
         default_value: example.fsa
