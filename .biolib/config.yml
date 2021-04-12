@@ -12,7 +12,7 @@ modules:
         source_files:
             - COPY / /home/biolib/
     muscle:
-        image: biolib://biolib/bl-emscripten:*
+        image: biolib://biolib/emscripten
 output_type: markdown
 arguments:
     -
