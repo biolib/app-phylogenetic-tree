@@ -13,9 +13,9 @@ modules:
     muscle:
         image: biolib://bio-utils/MUSCLE:0.0.59
         input_files:
-            - COPY /home/biolib/ /
-        output_files:
             - COPY / /home/biolib/
+        output_files:
+            - COPY /home/biolib/ /
         source_files: []
 output_type: markdown
 description_file: README.md
