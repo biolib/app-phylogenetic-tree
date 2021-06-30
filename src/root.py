@@ -49,5 +49,5 @@ if counter < 3:
     sys.exit(1)
 
 # Call MUSCLE
-subprocess.call(["muscle", "-in" , args.file, "-clw", "-out", "alignment.fsa"])
-generate_tree("alignment.fsa")
+
+generate_tree(args.file)
