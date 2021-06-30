@@ -10,7 +10,7 @@ import subprocess
 
 def generate_tree(infile):
     # Read the alignment
-    format = "clustal"
+    format = "fasta"
     alignment = AlignIO.read(infile, format)
     
     # Calculate distances
