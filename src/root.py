@@ -19,7 +19,7 @@ def generate_tree(infile):
     constructor = DistanceTreeConstructor(calculator,
                                           args.tree_type)  # Neighbor Joining tree or upgma for unweighted pair group method with arithmetic mean
     tree = constructor.build_tree(alignment)
-    fig = plt.figure()
+    fig = plt.figure(figsize=(12, 6))
     ax = fig.add_subplot(111)
     plt.title("Phylogenetic tree")
     tree.ladderize()
