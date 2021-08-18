@@ -35,11 +35,10 @@ def print_tree(infile, format):
     # Read the alignment
     tree = Phylo.read(infile, format)
     fig = plt.figure(figsize = (12, 6))
-    ax = fig.add_subplot(111)
     plt.title("Phylogenetic tree")
-    tree.ladderize() # Flip branches so deeper clades are displayed at top
+    #tree.ladderize() # Flip branches so deeper clades are displayed at top
     dp = 5
-    Phylo.draw(tree, axes = ax, branch_labels = lambda c: round(c.branch_length, dp), do_show = False)
+    Phylo.draw(tree)
     # Write output
     plt.savefig("tree.png")
     # Generate the Markdown preview
