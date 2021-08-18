@@ -10,16 +10,7 @@ modules:
             - COPY /home/biolib/ /
         source_files:
             - COPY / /home/biolib/
-    muscle:
-        image: biolib://bio-utils/MUSCLE:0.0.59
-        input_files:
-            - COPY / /home/biolib/
-        output_files: [] 
-           # - COPY / /home/biolib/
-        source_files: []
 output_type: markdown
-description_file: README.md
-license_file: LICENSE
 arguments:
     -
         key: '--input_type'
@@ -58,7 +49,8 @@ arguments:
                     key_value_separator: ' '
                     required: true
                     type: file
-                -   default_value:
+                -
+                    default_value: ''
                     description: Tree format file
                     key: '--format'
                     key_value_separator: ' '
