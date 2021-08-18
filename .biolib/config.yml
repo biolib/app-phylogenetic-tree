@@ -55,4 +55,9 @@ arguments:
                     key: '--format'
                     key_value_separator: ' '
                     required: false
-                    type: file
+                    type: dropdown
+                    options:
+                        'Newick': 'newick'
+                        'Phylo XML': 'phyloxml'
+                        'Nexus': 'nexus'
+
