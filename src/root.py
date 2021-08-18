@@ -37,7 +37,7 @@ def print_tree(infile, format):
     #fig = plt.figure(figsize = (12, 6))
     plt.title("Phylogenetic tree")
     tree.ladderize() # Flip branches so deeper clades are displayed at top
-    Phylo.draw(tree)
+    Phylo.draw(tree,do_show = False)
     # Write output
     plt.savefig("tree.png")
     # Generate the Markdown preview
