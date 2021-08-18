@@ -5,7 +5,7 @@ from Bio.Phylo.TreeConstruction import DistanceTreeConstructor
 import matplotlib.pyplot as plt
 import argparse
 import sys
-import subprocess
+
 
 
 def generate_tree(infile):
@@ -34,9 +34,9 @@ def generate_tree(infile):
 def print_tree(infile, format):
     # Read the alignment
     tree = Phylo.read(infile, format)
-    fig = plt.figure(figsize = (12, 6))
+    #fig = plt.figure(figsize = (12, 6))
     plt.title("Phylogenetic tree")
-    #tree.ladderize() # Flip branches so deeper clades are displayed at top
+    tree.ladderize() # Flip branches so deeper clades are displayed at top
     Phylo.draw(tree)
     # Write output
     plt.savefig("tree.png")
