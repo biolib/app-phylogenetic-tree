@@ -43,7 +43,7 @@ arguments:
                         Unweighted Pair-Group Method with Arithmetic Averaging (UPGMA): upgma
             'tree':
                 -
-                    default_value: example.fsa
+                    default_value: ''
                     description: Input file
                     key: '--file'
                     key_value_separator: ' '
