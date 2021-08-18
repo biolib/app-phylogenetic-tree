@@ -22,19 +22,45 @@ description_file: README.md
 license_file: LICENSE
 arguments:
     -
-        default_value: example.fsa
-        description: Input file
-        key: '--file'
+        key: '--input_type'
         key_value_separator: ' '
+        default_value: 'aln'
+        description: "Choose input type"
         required: true
-        type: file
-    -
-        default_value: nj
-        description: Select algorithm to build the phylogenetic tree
-        key: '--tree_type'
-        key_value_separator: ' '
-        required: false
         type: dropdown
         options:
-            Neighbor-Joining (NJ): nj
-            Unweighted Pair-Group Method with Arithmetic Averaging (UPGMA): upgma
+            'Alignment file': 'aln'
+            'Tree file': 'tree'
+        sub_arguments:
+            'aln':
+                -
+                    default_value: example.fsa
+                    description: Input file
+                    key: '--file'
+                    key_value_separator: ' '
+                    required: true
+                    type: file
+                -
+                    default_value: nj
+                    description: Select algorithm to build the phylogenetic tree
+                    key: '--tree_type'
+                    key_value_separator: ' '
+                    required: false
+                    type: dropdown
+                    options:
+                        Neighbor-Joining (NJ): nj
+                        Unweighted Pair-Group Method with Arithmetic Averaging (UPGMA): upgma
+            'tree':
+                -
+                    default_value: example.fsa
+                    description: Input file
+                    key: '--file'
+                    key_value_separator: ' '
+                    required: true
+                    type: file
+                -   default_value:
+                    description: Tree format file
+                    key: '--format'
+                    key_value_separator: ' '
+                    required: false
+                    type: file
